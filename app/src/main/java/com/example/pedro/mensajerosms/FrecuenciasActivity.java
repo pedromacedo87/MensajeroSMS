@@ -88,7 +88,7 @@ public class FrecuenciasActivity extends AppCompatActivity {
                         if (selected.isDirectory()){
                             ListDir(selected);
                         }else {
-                            textSeleccionado.setText(selected.toString()); // test as a commit
+                            textSeleccionado.setText(selected.toString());
                             Toast.makeText(FrecuenciasActivity.this,selected.toString()+" Seleccionado",Toast.LENGTH_LONG).show();
                             dismissDialog(CUSTOM_DIALOG_ID);
                             try {
