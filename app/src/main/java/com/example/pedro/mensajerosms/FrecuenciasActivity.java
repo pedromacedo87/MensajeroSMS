@@ -92,7 +92,9 @@ public class FrecuenciasActivity extends AppCompatActivity {
                             Toast.makeText(FrecuenciasActivity.this,selected.toString()+" Seleccionado",Toast.LENGTH_LONG).show();
                             dismissDialog(CUSTOM_DIALOG_ID);
                             try {
-                                 FileInputStream fileInputStream=getApplicationContext().openFileInput(textSeleccionado.getText().toString());
+                                File archivo = new File(textSeleccionado.getText().toString()); // ngsh: added to be able to read a fileinputstream.
+
+                                 FileInputStream fileInputStream= new FileInputStream(archivo);/*getApplicationContext().openFileInput(textSeleccionado.getText().toString());*/
                                 InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream,"UTF-8");
                                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                                 StringBuilder stringBuilder = new StringBuilder();
